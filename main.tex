@@ -7,28 +7,17 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage{ragged2e}
-\usepackage{etoolbox}
-\usepackage{tikz}
-\input{glyphtounicode}
-
-% font options
-\usepackage{newpxtext}
-\linespread{1.05}  % palladio needs more leading (space between lines)
-\usepackage[T1]{fontenc}
+\usepackage{xcolor}
 
 \pagestyle{fancy}
-\fancyhf{}  % clear all header and footer fields
+\fancyhf{} % clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% adjust margins
+% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
@@ -40,156 +29,150 @@
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
-\setlength{\footskip}{5pt}
 
-% sections formatting
+% Sections formatting
 \titleformat{\section}{
-  \vspace{-2pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-% custom commands
-\newcommand{\cvitem}[1]{
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
   \item\small{
-    {#1\vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
-\newcommand{\cvheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+\newcommand{\resumeSubheadTwo}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubhead}[3]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
-    \end{tabular*}\vspace{-7pt}
+      \textit{\normalsize#3}
+    \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\cvheadingstart}{\begin{itemize}[leftmargin=0in, label={}]}
-\newcommand{\cvheadingend}{\end{itemize}}
-\newcommand{\cvitemstart}{\begin{itemize}\justifying}
-\newcommand{\cvitemend}{\end{itemize}\vspace{-5pt}}
+\newcommand{\link}[2]{{\color{blue}\href{#1}{#2}}}
 
-\newcommand{\cvskill}[2]{
-  \textcolor{black}{\textbf{#1}}\hfill
-  \foreach \x in {1,...,5}{%
-    \space{\ifnumgreater{\x}{#2}{\color{black!80!white!20}}{\color{black}}\faSquare}}\par%
-  \vspace{-2pt}
-}
+% \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\footnotesize$\bullet$}}$}
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              CV STARTS HERE              %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-% contact information
-\begin{center}
-  \textbf{\LARGE\scshape Nguyen Nhu Hieu} \\
-  \vspace{1pt}\small
-  \href{mailto:}{nhuhieu193.cbc@gmail.com}
-  $\ \diamond\ $ 
-  +84 39 76 96 476
-  $\ \diamond\ $
-  \href{https://github.com/nhuhieu193}{https://github.com/nhuhieu193}
-  % $\ \diamond\ $
-  % \href{https://www.linkedin.com/}{LinkedIn}
-\end{center}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\huge Nguyen Nhu Hieu} & Email: \href{mailto:nhuhieu193.cbc@gmail.com}{nhuhieu193.cbc@gmail.com}\\
+  & Mobile: +84 39 76 96 476
+\end{tabular*}
 
-% \section{Professional Experience}
-% \cvheadingstart
-%   \cvheading
-%     {Company}{City, State}
-%     {Title}{09/2021 - Present}
-%   \cvitemstart
-%     \cvitem{Description}
-%     \cvitem{Description}
-%     \cvitem{Description}
-%     \cvitem{Description}
-%   \cvitemend
 
-%   \cvheading
-%     {Company}{City, State}
-%     {Title}{06/2019 - 09/2021}
-%   \cvitemstart
-%     \cvitem{Description}
-%     \cvitem{Description}
-%   \cvitemend
+%----------SUMMARY-----------------
+\section{Summary}
+  \resumeItemListStart
+    \resumeItem{Web Security Intern at Viettel Cyber Security in 2026}
+    \resumeItem{Software Engineer Intern at Viettel Telecom - Viettel Digital Talent 2025}
+    \resumeItem{Second prize in National Informatics of Olympiad for High school students in 2023}
+    \resumeItem{Experience with C++, Java, Python, PHP, Java Spring Boot, Database, Burp Suite, CTF.}
+  \resumeItemListEnd
 
-%   \cvheading
-%     {Company}{City, State}
-%     {Title}{12/2018 - 06/2019}
-%   \cvitemstart
-%     \cvitem{Description}
-%   \cvitemend
-% \cvheadingend
-
-% \section{Summary}
-% Junior IT student with a strong interest in cybersecurity, eager to learn and explore the foundations of system and application security. Motivated to develop skills in areas such as secure coding, network defense, and threat detection. Committed to growth through hands-on learning and excited to contribute to research and projects in a security-focused lab environment.
-
+%-----------EDUCATION------------
 \section{Education}
-\cvheadingstart
-  \cvheading
-    {University Of Engineering and Technology}{Ha Noi}
-    {Information Technology}{09/2023 - Present}
+  \resumeSubHeadingListStart
+    \resumeSubheadTwo
+      {University of Engineering and Technology - VNU}{Sep. 2023 -- Jun. 2027 (Expected)}
+      \resumeItemListStart
+        \resumeItem{Student of Information and Technology;  Current GPA: 3.71/4.00; Grade: \textbf{High distinction}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-    {Current GPA: 3.70/4.00}
-
-\cvheadingend
-
+%-----------EXPERIENCE-----------------
 \section{Experience}
-\cvitemstart
-    \item {Intern at Viettel Digital Talent 2025\hfill}
-    {04/2025 - 07/2025}
+  \resumeSubHeadingListStart
+    \resumeSubhead
+      {Viettel Telecom (VTT)}{Apr. 2025 -- Oct. 2025}
+      {Software Engineer Intern - Viettel Digital Talents 2025}
+      \resumeItemListStart
+      	\resumeItem{Implemented notification backend system in TV360.}
+	      \resumeItem{Language/Technology: \textbf{Java Spring Boot} \& \textbf{Database}.}
+      \resumeItemListEnd
 
-    Software Engineering
+    \resumeSubhead
+      {Viettel Cyber Security (VCS)}{Feb. 2026 -- Present}
+      {Web Security Intern - Red Team - VCS Passport 2026}
+      \resumeItemListStart
+      	\resumeItem{Learned fundamental knowledge and technical skill of Cyber Security.}
+        \resumeItem{Experience of Capture The Flag (CTF).}
+	      \resumeItem{Language/Technology: \textbf{Burp Suite}.}
+      \resumeItemListEnd
 
-    \item {Intern at Viettel Telecom\hfill}
-    {07/2025 - 09/2025}
+  \resumeSubHeadingListEnd
 
-    Software Engineering
-    
-\cvitemend
 
-\section{Technical Skills}
-    \cvitemstart
-        \cvitem {Programing language: C++, Java, Python}
-        \cvitem {Github, SQL}
-        \cvitem {Linux}
-        \cvitem {Advanced level of algorithms}
-    \cvitemend
+%-----------AWARDS----------
+\section{Achievements and Awards}
+  \resumeSubHeadingListStart
+    \resumeSubheadTwo
+      {Second prize in National Informatics of Olympiad for High school students}{2023}
+      \resumeItemListStart
+        \resumeItem{Competed individually in 2 days to solve problems about algorithmic problems in 3 hours.}
+      \resumeItemListEnd
 
-\section{Educaional projects}
-\cvitemstart
-    \cvitem {SDL Game Fireboy and watergirl, primarily using C++\hfill}
-    \href{https://github.com/nhuhieu193/fireboy_and_watergirl}{nhuhieu193/fireboy\_and\_watergirl}
-    \cvitem {Desktop application - Library management - 3 contributors\hfill}
-    \href{https://github.com/nhuhieu193/btlOOP}{nhuhieu193/btlOOP}
+    \resumeSubheadTwo
+      {International Collegiate Programming Contest (ICPC) Regional Contests}{2025}
+      \resumeItemListStart
+        \resumeItem{Competed in a team of three to solve 10‐-13 algorithmic problems in 5 hours using C++ \& Java.}
+        \resumeItem{\textbf{54th Place} in Ho Chi Minh ICPC Asia Regional Contest.}
+      \resumeItemListEnd
 
-    Main language: Java
-    
-    Framework: JavaFX
+    \resumeSubheadTwo
+      {International Collegiate Programming Contest (ICPC) National Contests}{2023, 2024}
+      \resumeItemListStart
+        \resumeItem{Competed in a team of three to solve 10‐-13 algorithmic problems in 5 hours using C++ \& Java.}
+        \resumeItem{\textbf{3rd Place} in Vietnam National ICPC Contest in 2023.}
+        \resumeItem{\textbf{3rd Place} in Vietnam National ICPC Contest in 2024.}
+      \resumeItemListEnd
 
-    CSS, Unit testing, multi-thread
+    \resumeSubheadTwo
+      {Viettel Programming Challenge (VPC)}{2025}
+      \resumeItemListStart
+        \resumeItem{Competed in a team of three to solve 10‐-13 algorithmic problems in 5 hours using C++ \& Java.}
+        \resumeItem{\textbf{3rd Place} in Viettel Programming Challenge in 2025.}
+      \resumeItemListEnd
 
-    \cvitem {Database Reporting Tool\hfill}
-    
-    Mini project Phase 1 - Viettel Digital Talent 2025
+    \resumeSubheadTwo
+      {Gold medalist at International Olympiad in Informatics for High school students}{2022}
+      \resumeItemListStart
+        \resumeItem{Competed individually in 2 days to solve 3 algorithmic problems in 5 hours on each day.}
+      \resumeItemListEnd
 
-    Frontend: Angular
+  \resumeSubHeadingListEnd
 
-    Backend: Spring Boot, Liquibase
 
-    Database: MySQL
-    
-\cvitemend
+%----------ACTIVITIES------------
+\section{Activities}
+  \resumeSubHeadingListStart
+    \resumeSubheadTwo
+      {Member of book writing team for Secondary Students Of Informatics}{Dec. 2024 -- May. 2025}
+      \resumeItemListStart
+        \resumeItem{Contributed to the development of a book for secondary school students preparing for Informatics Gifted High School entrance Exams.}
+      \resumeItemListEnd
 
-\section{Awards}
-\cvheadingstart
-\item
-\cvitemstart
-  \cvitem{Second prize of Vietnam Olympiad of Informatics\hfill}{2022 - 2023}
-  \cvitem{ICPC National - Third prize \hfill}{2023}
-  \cvitem{ICPC National - Third prize \hfill}{2024}
-\cvitemend
-\cvheadingend
+  \resumeSubHeadingListEnd
 
 \end{document}
